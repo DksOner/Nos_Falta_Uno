@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradiente_fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="338dp"
+        android:layout_height="379dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/main_form"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/bienvenido_a_nos_falta_uno"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:textOff="@string/iniciar_sesion"
+            android:textOn="@string/registrarse"
+            android:thumb="@drawable/thumb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            android:layout_marginTop="10dp"
+            app:showText="true"
+            app:track="@drawable/track" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="298dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/usuario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchCompat" />
+
+        <EditText
+            android:id="@+id/etContrasenia"
+            android:layout_width="298dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/contrasena"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
+
+        <Button
+            android:id="@+id/btn_In_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/btn_verde"
+            android:fontFamily="@font/nunito_regular"
+            android:paddingStart="70dp"
+            android:paddingEnd="70dp"
+            android:text="@string/textInBtn"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etContrasenia" />
+
+        <Button
+            android:id="@+id/btn_recordar_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/trasparente"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@string/forgot_pass_btn"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_In_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_arriendos"
+        android:enabled="true"
+        android:title="Arriendos"
+        android:icon="@drawable/list"/>
+    <item
+        android:id="@+id/nav_equipos"
+        android:enabled="true"
+        android:title="Equipo"
+        android:icon="@drawable/team_icon"/>
+    <item
+        android:id="@+id/nav_canchas"
+        android:enabled="true"
+        android:title="@string/arriendo"
+        android:icon="@drawable/btn_cancha"/>
+    <item
+        android:id="@+id/nav_notificaciones"
+        android:enabled="true"
+        android:title="@string/notificaciones"
+        android:icon="@drawable/notifications_icon"/>
+    <item
+        android:id="@+id/nav_opciones"
+        android:enabled="true"
+        android:title="@string/opciones"
+        android:icon="@drawable/gear_icon"/>
+</menu>
