@@ -7,46 +7,57 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.nosfaltauno.databinding.ActivityLoginBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class Login : AppCompatActivity() {
+
+    //ViewBinding
+    private lateinit var binding: ActivityLoginBinding
+    //Firebase Auth
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //Buscar el boton
-        val btnIngresarLogin = findViewById<Button>(R.id.btn_In_login)
+        //Nuevo metodo con firebase
+        auth = Firebase.auth
 
-        //Funcion para el boton
-        btnIngresarLogin.setOnClickListener {
-            //Llamar a la segunda vista
+        //Login al activar el boton
+        binding.btnInLogin.setOnClickListener {
 
-            try {
-                val usuario: String = findViewById<EditText>(R.id.etUsuario).text.toString()
-                val contrasenia: String = findViewById<EditText>(R.id.etContrasenia).text.toString()
+            //Recuperar el correo y la contraseña
+            val correo = binding.etEmail.text.toString()
+            val contrasena = binding.etPassword.text.toString()
 
-                if (usuario.isNotEmpty()) {
-                    if (contrasenia.isNotEmpty()) {
-                        if (usuario.equals("test")) {
-                            if (contrasenia.equals("123456")) {
-                                val intent = Intent(this, InicioUsuario::class.java)
-                                startActivity(intent)
-                            }else{
-                                Toast.makeText(this,"La contraseña no es valida", Toast.LENGTH_LONG).show()
-                            }
-                        }else{
-                            Toast.makeText(this,"El usuario no es valido", Toast.LENGTH_LONG).show()
-                        }
-                    }else{
-                        Toast.makeText(this,"No hay contraseña", Toast.LENGTH_LONG).show()
-                    }
-                }else{
-                    Toast.makeText(this,"No hay usuario", Toast.LENGTH_LONG).show()
-                }
-            } catch (e: Exception) {
-                Log.e("Error enviarNombre", e.message.toString())
+            if (correo.isEmpty()) {
+                binding.etEmail.error = "Ingresa un correo"
+                return@setOnClickListener
+            }
+            if (contrasena.isEmpty()) {
+                binding.etPassword.error = "Ingrese una contraseña"
             }
 
-        }
+            //Iniciar Sesion
+            signIn(correo, contrasena)
 
+        }
     }
+    private fun signIn(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if(it.isSuccessful) {
+                    Toast.makeText(this,"Inicio de sesion exitoso", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, InicioUsuario::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this,"Inicio de sesion invalido", Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
 }

@@ -58,7 +58,6 @@ class InicioUsuario : AppCompatActivity() {
                         .replace(R.id.frameLayout, SettingFragment()).commit()
                     true
                 }
-
                 else -> false
             }
         }

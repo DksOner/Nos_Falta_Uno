@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "575293389265",
+    "project_id": "nosfaltauno-ea477",
+    "storage_bucket": "nosfaltauno-ea477.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575293389265:android:e854471f9e472c2a7b88f0",
+        "android_client_info": {
+          "package_name": "com.example.nosfaltauno"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXzlQ7azcglcGAnaawzXad6mTbzqaCJFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
